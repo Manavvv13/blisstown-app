@@ -1,0 +1,156 @@
+/* Newsletter.css */
+.newsletter-section {
+    padding: var(--section-gap) var(--margin-desktop);
+    background-color: var(--surface-container-low); /* Deep Navy Section */
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .newsletter-section {
+        padding: calc(var(--section-gap) * 0.5) var(--margin-mobile);
+    }
+}
+
+.newsletter-background-glow {
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.newsletter-container {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.newsletter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    line-height: 1.15;
+    font-weight: 300;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.01em;
+}
+
+.newsletter-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: var(--secondary);
+    text-transform: uppercase;
+    margin: 0 0 48px 0;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .newsletter-form {
+        flex-direction: row;
+        gap: 16px;
+        align-items: flex-end;
+    }
+}
+
+.newsletter-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    padding: 16px 0;
+    outline: none;
+    transition: all 0.4s ease;
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletter-input:focus {
+    border-bottom-color: var(--secondary);
+}
+
+.newsletter-submit {
+    /* Styles matching btn-primary */
+    border: 1px solid var(--secondary);
+    background: var(--secondary);
+    color: var(--background) !important;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    padding: 16px 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border-radius: 0;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(229, 193, 118, 0.3);
+}
+
+.newsletter-submit::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--background);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.newsletter-submit:hover::before {
+    width: 320%;
+    height: 320%;
+}
+
+.newsletter-submit:hover {
+    color: var(--secondary) !important;
+    border-color: var(--secondary);
+    box-shadow: 0 8px 25px rgba(229, 193, 118, 0.5);
+}
+
+.newsletter-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.newsletter-success-icon {
+    font-size: 36px !important;
+    color: var(--secondary);
+}
+
+.newsletter-success-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 300;
+}

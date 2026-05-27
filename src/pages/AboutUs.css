@@ -1,0 +1,476 @@
+/* AboutUs.css */
+.about-page {
+    background-color: var(--background);
+    color: var(--on-surface);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Page Header / Hero Banner */
+.about-hero {
+    position: relative;
+    padding-top: 180px;
+    padding-bottom: 100px;
+    background-image: 
+        linear-gradient(to bottom, rgba(4, 6, 17, 0.8) 0%, var(--background) 100%),
+        url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    border-bottom: 1px solid var(--outline);
+}
+
+.about-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(197, 160, 89, 0.08) 0%, transparent 80%);
+    pointer-events: none;
+}
+
+.about-hero__content {
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero__tag {
+    color: var(--secondary);
+    display: block;
+    margin-bottom: 16px;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+}
+
+.about-hero__title {
+    margin: 0 0 24px 0;
+    color: var(--on-surface);
+}
+
+.breadcrumbs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--on-surface-variant);
+}
+
+.breadcrumb-item {
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb-item:hover {
+    color: var(--secondary);
+}
+
+.breadcrumb-item--active {
+    color: var(--secondary);
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.breadcrumb-separator {
+    color: rgba(197, 160, 89, 0.4);
+}
+
+/* Section 1: Who We Are & Image Stack */
+.about-intro-section {
+    padding-top: var(--section-gap);
+    padding-bottom: var(--section-gap);
+}
+
+.about-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .about-intro-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+}
+
+/* Image Stack Layout */
+.about-image-stack {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    height: 480px;
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    .about-image-stack {
+        height: 380px;
+    }
+}
+
+.image-wrapper {
+    position: absolute;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--outline);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.main-image-wrapper {
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 85%;
+    z-index: 2;
+}
+
+.sub-image-wrapper {
+    bottom: 0;
+    right: 0;
+    width: 55%;
+    height: 65%;
+    z-index: 3;
+    border: 6px solid var(--background); /* Mask border */
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+.image-wrapper:hover .about-img {
+    transform: scale(1.05);
+}
+
+.decor-gold-box {
+    position: absolute;
+    top: -24px;
+    left: -24px;
+    width: 45%;
+    height: 55%;
+    border: 2px solid var(--secondary-light);
+    border-radius: 28px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Intro Text Details */
+.about-intro-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-intro-title {
+    margin-top: 16px;
+    margin-bottom: 0;
+    line-height: 1.15;
+}
+
+.about-intro-title em {
+    color: var(--secondary);
+    font-style: italic;
+    font-weight: 300;
+}
+
+.title-separator {
+    height: 2px;
+    width: 60px;
+    background: var(--secondary);
+    margin: 32px 0;
+}
+
+.intro-p {
+    color: var(--on-surface);
+    margin-bottom: 20px;
+}
+
+.intro-sub-p {
+    color: var(--on-surface-variant);
+    margin-bottom: 0;
+}
+
+/* Section 2: Performance & Track Record */
+.about-performance-section {
+    background-color: var(--surface-container-low);
+    border-top: 1px solid var(--outline-variant);
+    border-bottom: 1px solid var(--outline-variant);
+    padding-top: var(--section-gap);
+    padding-bottom: var(--section-gap);
+}
+
+.section-title-wrapper {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title-center {
+    margin-top: 12px;
+    margin-bottom: 0;
+    color: var(--on-surface);
+}
+
+/* Projects Grid Cards */
+.about-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--gutter);
+    margin-bottom: 80px;
+}
+
+@media (min-width: 576px) {
+    .about-projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .about-projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.project-glass-card {
+    background: var(--surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--outline);
+    border-radius: 28px;
+    padding: 48px 36px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: default;
+}
+
+.project-glass-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary);
+    box-shadow: 0 20px 40px rgba(229, 193, 118, 0.06);
+}
+
+.card-header-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--primary-container);
+    border: 1px solid var(--outline);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px auto;
+    color: var(--secondary);
+    transition: transform 0.4s;
+}
+
+.project-glass-card:hover .card-header-icon {
+    transform: scale(1.1);
+    background: var(--secondary);
+    color: var(--background);
+    border-color: var(--secondary);
+}
+
+.card-header-icon span {
+    font-size: 28px;
+}
+
+.project-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--on-surface);
+    margin: 0 0 8px 0;
+}
+
+.project-card-loc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    margin: 0 0 28px 0;
+}
+
+.status-badge-container {
+    display: inline-block;
+}
+
+.status-badge-capsule {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: var(--primary-container);
+    color: var(--secondary);
+    border: 1px solid var(--outline);
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: all 0.3s;
+}
+
+.project-glass-card:hover .status-badge-capsule {
+    background-color: rgba(229, 193, 118, 0.15);
+    border-color: var(--secondary);
+}
+
+/* Stats Achievements Badges Row */
+.about-stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--outline);
+    background: rgba(10, 16, 41, 0.2);
+    border-radius: 28px;
+    padding: 40px;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.stat-achievement-card {
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+}
+
+.stat-ach-number {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 400;
+    color: var(--secondary);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.stat-ach-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--on-surface-variant);
+    font-weight: 600;
+}
+
+.stat-ach-divider {
+    width: 1px;
+    height: 64px;
+    background-color: var(--outline-variant);
+}
+
+@media (max-width: 768px) {
+    .stat-ach-divider {
+        display: none;
+    }
+    
+    .about-stats-container {
+        flex-direction: column;
+        padding: 36px 20px;
+    }
+}
+
+/* Section 3: Promise & Philosophy */
+.about-philosophy-section {
+    padding-top: var(--section-gap);
+    padding-bottom: var(--section-gap);
+}
+
+.about-philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .about-philosophy-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+    }
+}
+
+/* Quote Box Layout */
+.about-quote-box {
+    background: var(--surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--outline);
+    border-left: 5px solid var(--secondary); /* Thick gold accent left border */
+    padding: 56px 48px;
+    border-radius: 0 28px 28px 0;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+    .about-quote-box {
+        padding: 40px 24px;
+    }
+}
+
+.quote-badge {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    color: rgba(229, 193, 118, 0.12);
+    pointer-events: none;
+}
+
+.quote-badge span {
+    font-size: 80px !important;
+}
+
+.promise-blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.45;
+    font-style: italic;
+    color: var(--on-surface);
+    margin: 0 0 24px 0;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 576px) {
+    .promise-blockquote {
+        font-size: 26px;
+    }
+}
+
+.promise-citation {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    display: block;
+}
+
+/* Philosophy Content Details */
+.about-philosophy-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.philosophy-title {
+    margin-top: 16px;
+    margin-bottom: 28px;
+    color: var(--on-surface);
+}
+
+.philosophy-p {
+    color: var(--on-surface-variant);
+    margin-bottom: 24px;
+    line-height: 1.8;
+}
+
+.philosophy-p:last-child {
+    margin-bottom: 0;
+}

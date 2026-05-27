@@ -1,0 +1,115 @@
+.intro-section {
+    background-color: var(--background);
+    color: var(--on-surface);
+    padding: var(--section-gap) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        padding: calc(var(--section-gap) * 0.5) 0;
+    }
+}
+
+.intro-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .intro-container {
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--gutter);
+    }
+}
+
+.intro-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (min-width: 992px) {
+    .intro-left {
+        grid-column: span 5;
+    }
+}
+
+.intro-tag {
+    color: var(--secondary);
+}
+
+.intro-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 36px;
+    overflow: hidden;
+    border: 1px solid var(--outline);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.intro-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.intro-image-wrapper:hover .intro-image {
+    transform: scale(1.05);
+}
+
+.intro-right {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 992px) {
+    .intro-right {
+        grid-column: span 7;
+        padding-left: 48px;
+    }
+}
+
+.intro-highlight-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+    margin: 0 0 40px 0;
+}
+
+@media (max-width: 768px) {
+    .intro-highlight-title {
+        font-size: 26px;
+        line-height: 1.45;
+    }
+}
+
+.word-fade {
+    color: rgba(255, 255, 255, 0.25); /* Faded grey-white */
+    transition: color 0.15s ease-out;
+    display: inline-block;
+    white-space: pre;
+}
+
+.intro-actions {
+    margin-bottom: 48px;
+}
+
+.intro-footer-text {
+    max-width: 360px;
+    margin-left: auto;
+    color: var(--on-surface-variant);
+}
+
+@media (max-width: 992px) {
+    .intro-footer-text {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}

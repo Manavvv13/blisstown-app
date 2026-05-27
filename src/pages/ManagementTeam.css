@@ -1,0 +1,137 @@
+.management-page {
+    background-color: var(--background);
+    color: var(--on-surface);
+    min-height: 100vh;
+}
+
+.management-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    grid-column: span 12;
+}
+
+.management-title {
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.intro-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.intro-paragraphs p {
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.text-slate {
+    color: var(--on-surface-variant);
+}
+
+/* Committees section */
+.committees-section {
+    width: 100%;
+    margin-top: 40px;
+    grid-column: span 12;
+}
+
+.committees-header {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 38px;
+    position: relative;
+}
+
+.committees-header::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--secondary);
+}
+
+.committees-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gutter);
+}
+
+@media (max-width: 991px) {
+    .committees-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+.committee-card {
+    background: var(--surface);
+    padding: 48px 36px;
+    border: 1px solid var(--outline-variant);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.committee-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--secondary);
+    box-shadow: 0 20px 40px rgba(197, 160, 89, 0.08);
+}
+
+.committee-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid var(--outline);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    background-color: var(--surface-dim);
+    transition: all 0.4s ease;
+}
+
+.committee-card:hover .committee-icon-wrapper {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.committee-icon {
+    font-size: 28px;
+    color: var(--secondary);
+    transition: all 0.4s ease;
+}
+
+.committee-card:hover .committee-icon {
+    color: var(--on-primary);
+}
+
+.committee-card__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--on-surface);
+    margin: 0 0 16px 0;
+}
+
+.committee-line {
+    width: 40px;
+    height: 1px;
+    background-color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.committee-card__desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--on-surface-variant);
+    margin: 0;
+}

@@ -1,0 +1,211 @@
+.chairman-page {
+    background-color: var(--background);
+    color: var(--on-surface);
+    min-height: 100vh;
+}
+
+/* Chairman Grid */
+.chairman-grid {
+    align-items: center;
+    gap: var(--gutter);
+}
+
+/* Portrait Block */
+.chairman-portrait-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    grid-column: span 12;
+}
+
+.chairman-portrait-frame {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 520px;
+    padding: 16px;
+    background: var(--surface);
+    box-shadow: 0 30px 60px rgba(10, 17, 40, 0.05);
+    border: 1px solid var(--outline-variant);
+}
+
+.chairman-portrait-bg {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--on-primary);
+    text-align: center;
+    padding: 40px;
+    position: relative;
+}
+
+.gold-star-emblem {
+    font-size: 72px;
+    color: var(--secondary);
+    margin-bottom: 24px;
+    line-height: 1;
+    animation: pulseGlow 4s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.8; text-shadow: 0 0 10px rgba(197, 160, 89, 0.2); }
+    100% { transform: scale(1.08); opacity: 1; text-shadow: 0 0 25px rgba(197, 160, 89, 0.5); }
+}
+
+.portrait-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.portrait-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--secondary);
+}
+
+.frame-border-top, .frame-border-bottom {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--secondary);
+}
+
+.frame-border-top {
+    top: 8px;
+    left: 8px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.frame-border-bottom {
+    bottom: 8px;
+    right: 8px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Content Column */
+.chairman-content {
+    grid-column: span 12;
+    padding-left: 0;
+}
+
+@media (min-width: 992px) {
+    .chairman-portrait-container {
+        grid-column: span 5;
+    }
+    .chairman-content {
+        grid-column: span 7;
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .chairman-content {
+        margin-top: 40px;
+    }
+}
+
+.chairman-title {
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.chairman-text .letter-lead {
+    color: var(--on-surface);
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.chairman-text p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Experience Counter */
+.experience-counter-wrapper {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.experience-counter {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--outline);
+    background-color: var(--surface-dim);
+    padding: 24px 32px;
+    gap: 24px;
+}
+
+.experience-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 400;
+    color: var(--primary);
+    line-height: 1;
+    border-right: 1px solid var(--outline-variant);
+    padding-right: 24px;
+}
+
+.experience-text-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.exp-line-1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.exp-line-2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--on-surface);
+}
+
+/* Signature */
+.signature-block {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signature-line {
+    width: 120px;
+    height: 1px;
+    background-color: var(--secondary);
+    margin-bottom: 16px;
+}
+
+.signer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--on-surface);
+}
+
+.signer-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--on-surface-variant);
+    margin-top: 4px;
+}
