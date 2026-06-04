@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addContactLead } from '../utils/localStorageHelper';
+import { addContactLead } from '../utils/firebaseHelper';
 import './ContactSection.css';
 
 const ContactSection = () => {
@@ -21,13 +21,13 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     // Simulate lead submission animation
     setTimeout(() => {
-      addContactLead(formData);
+      await addContactLead(formData);
       setLoading(false);
       setSubmitted(true);
       
