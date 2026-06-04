@@ -7,25 +7,35 @@ const Newsletter = () => {
     const [subscribed, setSubscribed] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!email) return;
+    const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    if (!email) return;
+
+    try {
         setLoading(true);
-        // Save to Firebase (non-blocking)
-        submitNewsletterForm(email)
-            .catch((error) => {
-                console.error('Error saving newsletter lead to Firebase:', error);
-            });
 
-        setLoading(false);
+        const result = await submitNewsletterForm(email);
+
+        if (result === null) {
+            alert('You are already subscribed!');
+            return;
+        }
+
         setSubscribed(true);
         setEmail('');
-        
+
         setTimeout(() => {
             setSubscribed(false);
         }, 6000);
-    };
+
+    } catch (error) {
+        console.error('Error saving newsletter lead:', error);
+        alert('Failed to subscribe. Please try again.');
+    } finally {
+        setLoading(false);
+    }
+};
 
     return (
         <section className="newsletter-section">
